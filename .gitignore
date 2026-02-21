@@ -1,2 +1,4 @@
 venv/
 myevn/
+.python-version/
+.venv/

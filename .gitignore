@@ -2,3 +2,5 @@ venv/
 myevn/
 .python-version/
 .venv/
+groq_test.py/
+.env/

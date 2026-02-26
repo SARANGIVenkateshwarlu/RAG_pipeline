@@ -1,0 +1,35 @@
+The Genesis and Evolution of Retrieval-Augmented Generation (RAG)
+
+Retrieval-Augmented Generation (RAG) has undergone a profound transformation since its emergence as a concept in 2022. What began as a promising research technique to combat Large Language Model (LLM) hallucinations has rapidly matured into a cornerstone of enterprise AI infrastructure by early 2026. This comprehensive review synthesizes the key advancements, architectural shifts, and practical implications of RAG across various domains, with a particular focus on real-time applications and the financial sector.
+
+### 2022: Laying the Foundation - The Dawn of RAG
+
+In late 2022, RAG first gained significant attention as an innovative method to ground LLMs in external, up-to-date knowledge, thereby mitigating the problem of factual inaccuracies or "hallucinations." Early RAG pipelines were relatively straightforward:
+
+* **Document Ingestion:** Primarily text-based, often involving simple PDF parsing using libraries like PyPDF2.
+* **Chunking:** Basic fixed-size chunking (e.g., 512-1024 tokens) was common, aiming to balance context preservation with manageability.
+* **Embedding:** Text was converted into dense vector representations using models such as Sentence-BERT or OpenAI's `ada-002`.
+* **Vector Databases:** Tools like FAISS (Facebook AI Similarity Search) and Pinecone began to gain traction for efficient approximate nearest neighbor (ANN) search.
+* **Retrieval & Augmentation:** Retrieved document chunks, based on similarity to the user query, were used to augment the LLM's prompt.
+
+Frameworks like LangChain started to provide the initial building blocks, standardizing these processes. Early challenges included a limited understanding of optimal chunking strategies and scalability issues for larger datasets.
+
+### 2023: Maturation and Framework Proliferation
+
+The year 2023 marked a period of rapid growth and diversification for RAG. Key developments included:
+
+* **Framework Expansion:** LangChain and LlamaIndex emerged as prominent open-source frameworks, offering more sophisticated tools for data loading, indexing, and query orchestration. LlamaIndex, in particular, focused on simplifying the connection of LLMs to external data sources.
+* **Vector Database Evolution:** A broader ecosystem of vector databases matured, including Weaviate, Chroma, Qdrant, and Milvus, offering enhanced performance, scalability, and advanced features like filtering and hybrid search capabilities.
+* **Early Multimodal Explorations:** Initial efforts to handle non-textual data appeared, with some integration of images via CLIP embeddings.
+* **Evaluation Metrics:** Basic metrics like ROUGE and BLEU were used, often complemented by ad-hoc human review for factual consistency.
+
+This period also saw initial explorations into RAG for financial applications, such as basic document analysis and Q&A systems.
+
+### 2024: Advanced Techniques and Multimodal Integration
+
+By 2024, RAG pipelines became significantly more sophisticated, driven by the need to handle diverse data types and complex queries:
+
+* **Sophisticated Chunking:** Techniques such as semantic chunking (splitting based on meaning), document-based chunking (preserving structural integrity), and hierarchical chunking gained prominence. For multi-modal content, this extended to sliding-window approaches for video and metadata enrichment for PDFs.
+* **Multimodal Ingestion Maturity:** Significant progress was made in processing data beyond text. Tools like Unstructured.io and LlamaParse enabled layout-aware PDF parsing. Audio transcription relied on models like Whisper, and images were processed using CLIP or ViT embeddings.
+* **Hybrid Retrieval:** Combining vector similarity search (dense retrieval) with keyword-based search (sparse retrieval like BM25) became a standard practice to improve recall and precision.
+* **Agentic RAG Emergence:** A pivotal shift began towards "agentic RAG," where LLMs dynamically controlled the retrieval process, enabling iterative querying, self-correction, and tool utilization, moving beyond fixed, static pipelines.
